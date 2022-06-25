@@ -1,15 +1,21 @@
 import './App.css';
-// import Counter from "./components/Counter";
-import CounterFn from "./components/CounterFn";
-import Counter from "./components/Counter";
+import {useState} from "react";
+import initialState from "./initialState";
+import Grudges from "./components/Grudges";
+
+// import Counter from "./components/Counter/Counter";
+// import CounterFn from "./components/CounterFn/CounterFn";
 
 function App() {
-  return (
-    <div className="App">
-         <Counter max={10}/>
-        {/*<CounterFn/>*/}
-    </div>
-  );
+    const [grudges, setGrudges] = useState(initialState);
+
+    return (
+        <div className="App">
+            {/*<Counter max={10}/>*/}
+            {/*<CounterFn max={10}/>*/}
+            <Grudges grudges={grudges}/>
+        </div>
+    );
 }
 
 export default App;
