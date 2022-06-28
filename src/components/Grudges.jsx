@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Grudge from "./Grudge";
+import {GrudgeContext} from "../GrudgeContext";
 
-function Grudges({grudges = []}) {
+function Grudges() {
+    const {grudges} = useContext(GrudgeContext)
+
     return (
         <div>
             <h2>Grudges: ({grudges.length})</h2>
